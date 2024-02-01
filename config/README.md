@@ -125,13 +125,13 @@ This codebase is slightly refactored, and for some reason it affects the results
 
 ![TL2BR-tiger.0000](../assets/figs/TL2BR-tiger.0000.gif)
 
-- **FNF-fish**: Two comparison on changing or not changing the bbox size of fish.
+- **FNF-fish**: Two comparison on changing or not changing the bbox size of fish to emulate the perspective view changes.
 
-**FNF-fish.0001.yaml**
+**Perspective-fish.0001.yaml**
 
 ![FNF-fish.0001](../assets/figs/FNF-fish.0001.0000.gif)
 
-**FNF-fish.0002.yaml**
+**Perspective-fish.0002.yaml**
 
 ![FNF-fish.0002](../assets/figs/FNF-fish.0002.0000.gif)
 
