@@ -3,7 +3,6 @@
 
 [![Paper](https://img.shields.io/badge/cs.CV-Paper-b31b1b?logo=arxiv&logoColor=red)](https://arxiv.org/abs/2401.00896)
 [![Project Page](https://img.shields.io/badge/TrailBlazer-Website-green?logo=googlechrome&logoColor=green)](https://hohonu-vicml.github.io/Trailblazer.Page/)
-<!-- [![PyPI](https://img.shields.io/pypi/v/vbench)](https://pypi.org/project/vbench/) -->
 [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Demo-blue)](https://huggingface.co/spaces/hohonu-vicml/Trailblazer)
 [![Video](https://img.shields.io/badge/YouTube-Project-c4302b?logo=youtube&logoColor=red)](https://www.youtube.com/watch?v=kEN-32wN-xQ)
 [![Video](https://img.shields.io/badge/YouTube-Result-c4302b?logo=youtube&logoColor=red)](https://www.youtube.com/watch?v=P-PSkS7sNco)
