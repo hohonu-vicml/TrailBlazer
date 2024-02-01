@@ -5,19 +5,20 @@ Please use the following command to run our TrailBlazer:
 
 ```bash
 python bin/CmdTrailBlazer.py --config ${YOUR_CONFIG_FILEPATH} -mr ${YOUR_MODEL_ROOT}
-e.g., python bin/CmdTrailBlazer.py --config config/R2L-fish.yaml** -mr ${YOUR_MODEL_ROOT}
+e.g., python bin/CmdTrailBlazer.py --config config/R2L-fish.yaml -mr ${YOUR_MODEL_ROOT}
 ```
 
-For your convenience, you could run the following command to get all the config results:
+For your convenience, you could run the following command to get the results from all config yamls in the given folder:
 ```bash
 python bin/CmdTrailBlazer.py --config ${YOUR_CONFIG_FOLDER} -mr ${YOUR_MODEL_ROOT}
-e.g., python bin/CmdTrailBlazer.py --config config -mr ${YOUR_MODEL_ROOT}
+# say, you want to execute all yaml files in the provided config folder
+e.g., python bin/CmdTrailBlazer.py --config ./config -mr ${YOUR_MODEL_ROOT}
 ```
 
 (TODO: We will futher update how to run the scene compositing
 with multiple objects in within a few weeks. We appreciate your patience.)
 
-#### Structure
+## Structure
 
 The following example pseudo config covers the needs to run our TrailBlazer for
 single object.
@@ -62,7 +63,9 @@ Some requirements:
   b_right, b_top < b_bottom in opencv style.
 
 
-#### Result per config
+## Result per config
+
+This codebase is slightly refactored, and for some reason it affects the results different from our youtube video. We'll check if anything goes wrong in the following days.
 
 - **L2R**: Standard test to move subject from left to right.
 
@@ -140,7 +143,7 @@ Some requirements:
 
 **Speed-cat.0002.yaml**
 
-![Speed-cat.0002](../assets/figs/Speed-cat.0002.0000.gif)
+![Speed-cat.0002](../assets/figs/Speed-cat.0002.0001.gif)
 
 **Speed-cat.0003.yaml**
 
