@@ -58,7 +58,7 @@ A list of config example files is stored in the `config` folder. Feel free to ru
 
 ## :fire: Contribution
 
-This project is still a work in progress, and there are numerous directions in which it can be improved. Please don't hesitate to contact us if you are interested, or feel free to make a pull request to strengthen the ideas.
+This project is still working in progress, and there are numerous directions in which it can be improved. Please don't hesitate to contact us if you are interested, or feel free to make a pull request to strengthen the ideas.
 
 ## :fire: TODO
 
