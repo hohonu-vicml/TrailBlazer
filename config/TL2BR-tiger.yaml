@@ -1,0 +1,27 @@
+keyframe:
+- bbox_ratios:
+  - 0.0
+  - 0.0
+  - 0.1
+  - 0.1
+  frame: 0
+  prompt: A tiger walking alone down the street
+- bbox_ratios:
+  - 0.5
+  - 0.5
+  - 1.0
+  - 1.0
+  frame: 24
+  prompt: A tiger walking alone down the street
+num_dd_spatial_steps: 7
+num_dd_temporal_steps: 7
+num_frames: 24
+seed: 123451232532
+spatial_strengthen_scale: 0.1
+spatial_weaken_scale: 0.001
+temp_strengthen_scale: 0.1
+temp_weaken_scale: 0.001
+token_inds:
+- 1
+- 2
+trailing_length: 14

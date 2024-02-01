@@ -1,0 +1,33 @@
+keyframe:
+- bbox_ratios:
+  - 0.0
+  - 0.35
+  - 0.5
+  - 0.65
+  frame: 0
+  prompt: A cat is running on the grass
+- bbox_ratios:
+  - 0.5
+  - 0.35
+  - 1.0
+  - 0.65
+  frame: 12
+  prompt: A cat is running on the grass
+- bbox_ratios:
+  - 0.0
+  - 0.35
+  - 0.5
+  - 0.65
+  frame: 24
+  prompt: A cat is running on the grass
+num_dd_spatial_steps: 5
+num_dd_temporal_steps: 5
+seed: 20
+spatial_strengthen_scale: 0.15
+spatial_weaken_scale: 0.001
+temp_strengthen_scale: 0.15
+temp_weaken_scale: 0.001
+token_inds:
+- 1
+- 2
+trailing_length: 10

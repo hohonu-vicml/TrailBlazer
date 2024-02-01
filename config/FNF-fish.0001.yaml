@@ -1,0 +1,34 @@
+keyframe:
+- bbox_ratios:
+  - 0.0
+  - 0.0
+  - 0.2
+  - 0.2
+  frame: 0
+  prompt: A fish swimming in the sea
+- bbox_ratios:
+  - 0.2
+  - 0.2
+  - 0.8
+  - 0.8
+  frame: 12
+  prompt: A fish swimming in the sea
+- bbox_ratios:
+  - 0.8
+  - 0.8
+  - 1.0
+  - 1.0
+  frame: 23
+  prompt: A fish swimming in the sea
+num_dd_spatial_steps: 7
+num_dd_temporal_steps: 7
+seed: 53
+spatial_strengthen_scale: 0.075
+spatial_weaken_scale: 0.0001
+temp_strengthen_scale: 0.075
+temp_weaken_scale: 0.0001
+token_inds:
+- 1
+- 2
+- 3
+trailing_length: 13

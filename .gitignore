@@ -1,0 +1,5 @@
+assets
+__pycache__
+*.pyc
+*.png
+*undo*
