@@ -12,7 +12,8 @@
 
 This repository contains the implementation of the following paper:
 > **Trajectory Control for Diffusion-Based Video Generation**<br>
-> [Wan-Duo Kurt Ma](https://www.linkedin.com/in/kurt-ma/)<sup>∗</sup>, [J.P. Lewis](http://www.scribblethink.org/)<sup>∗</sup>, [ W. Bastiaan Kleijn](https://people.wgtn.ac.nz/bastiaan.kleijn)<sup>∗</sup>,<br>
+> [Wan-Duo Kurt Ma](https://www.linkedin.com/in/kurt-ma/)<sup>1</sup>, [J.P. Lewis](http://www.scribblethink.org/)<sup>2</sup>, [ W. Bastiaan Kleijn](https://people.wgtn.ac.nz/bastiaan.kleijn)<sup>1</sup>,<br>
+Victoria University of Wellington<sup>1</sup>, NVIDIA Research<sup>2</sup>
 
 
 # :fire: Overview
