@@ -1,2 +1,0 @@
-* Trailblazer: Trajectory Control for Diffusion-Based Video Generation
-Stay tuned, we will release our code base shortly in January 2024

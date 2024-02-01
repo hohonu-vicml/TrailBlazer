@@ -66,6 +66,7 @@ Some requirements:
 - **L2R**: Standard test to move subject from left to right.
 
 **L2R-fish.yaml**
+
 ![L2R-fish.0000](../assets/figs/L2R-fish.0000.gif)
 
 **L2R-horse.yaml**
