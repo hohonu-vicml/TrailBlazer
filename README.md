@@ -25,7 +25,7 @@ The codebase is tested under **NVIDIA GeForce RTX 3090** with the python library
 
 ## :fire: Timeline
 
--   [2024/02/06]: We now have Gradio web app at HF(:hugs:) Space! Please check it out!
+-   [2024/02/06]: We now have Gradio web app at Huggingface Space! Please check it out!
 -   [2024/02/01]: The official codebase released
 -   [2024/01/03]: Paper released
 -   [2023/12/31]: Paper submitted on ArXiv
