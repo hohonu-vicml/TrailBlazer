@@ -69,12 +69,11 @@ This project is still working in progress, and there are numerous directions in 
 
 We apologize this repository is currently not fully public. Currently, we only release the core methods of a single subject synthesis. We will progressively make the multiple subjects and Gradio demo within next two weeks. Stay tuned! (again!)
 
-
-<img src="./assets/figs/Speed-cat.0004.0000.gif" width="256" height="256">
 Poor cat: Someone, Stop me!
+<img src="./assets/figs/Speed-cat.0004.0000.gif" width="256" height="256">
 
-<img src="./assets/figs/Omg-CatDog.0003.gif" width="256" height="256">
 TrailBlazer can also make subject deformation!
+<img src="./assets/figs/Omg-CatDog.0003.gif" width="256" height="256">
 
 
 ## :fire: Citation
