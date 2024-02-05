@@ -14,7 +14,6 @@ This repository contains the implementation of the following paper:
 > [Wan-Duo Kurt Ma](https://www.linkedin.com/in/kurt-ma/)<sup>1</sup>, [J.P. Lewis](http://www.scribblethink.org/)<sup>2</sup>, [ W. Bastiaan Kleijn](https://people.wgtn.ac.nz/bastiaan.kleijn)<sup>1</sup>,<br>
 Victoria University of Wellington<sup>1</sup>, NVIDIA Research<sup>2</sup>
 
-
 ## :fire: Overview
 ![teaser](./assets/figs/teaser.gif)
 
@@ -26,6 +25,7 @@ The codebase is tested under **NVIDIA GeForce RTX 3090** with the python library
 
 ## :fire: Timeline
 
+-   [2024/02/06]: We now have Gradio web app at HF(:hugs:) Space! Please check it out!
 -   [2024/02/01]: The official codebase released
 -   [2024/01/03]: Paper released
 -   [2023/12/31]: Paper submitted on ArXiv
@@ -52,6 +52,11 @@ python bin/CmdTrailBlazer.py -mr ${MODEL_ROOT} --config config/XXXX.yaml  ## sin
 python bin/CmdTrailBlazer.py -mr ${MODEL_ROOT} --config config/  ## run all yamls in a folder
 ```
 
+:cupid:UPDATE:cupid: TrailBlazer has just released Gradio app for the alternative interface. Please checkout our documentation ([Gradio.md](doc/Gradio.md)) for more information. To run the app, simply run:
+```bash
+python bin/CmdGradio.py ${MODEL_ROOT} # no -mr here
+```
+
 ##### Config
 
 A list of config example files is stored in the `config` folder. Feel free to run each of them and the result will be written in the `/tmp` folder. For more information how to design the config file, and the visual result of each config. Please visit [here](config/README.md).
@@ -63,6 +68,14 @@ This project is still working in progress, and there are numerous directions in 
 ## :fire: TODO
 
 We apologize this repository is currently not fully public. Currently, we only release the core methods of a single subject synthesis. We will progressively make the multiple subjects and Gradio demo within next two weeks. Stay tuned! (again!)
+
+
+<img src="./assets/figs/Speed-cat.0004.0000.gif" width="256" height="256">
+Poor cat: Someone, Stop me!
+
+<img src="./assets/figs/Omg-CatDog.0003.gif" width="256" height="256">
+TrailBlazer can also make subject deformation!
+
 
 ## :fire: Citation
 

@@ -1,3 +1,4 @@
+import tqdm
 import inspect
 from typing import Any, Callable, Dict, List, Optional, Union
 
@@ -62,6 +63,7 @@ def text_to_video_sd_pipeline_call(
     callback: Optional[Callable[[int, int, torch.FloatTensor], None]] = None,
     callback_steps: int = 1,
     cross_attention_kwargs: Optional[Dict[str, Any]] = None,
+    progress = None,
 ):
     r"""
     The call function to the pipeline for generation.
@@ -251,7 +253,13 @@ def text_to_video_sd_pipeline_call(
     latents_at_steps = []
 
     with self.progress_bar(total=num_inference_steps) as progress_bar:
-        for i, t in enumerate(timesteps):
+
+        if type(progress)!=type(None):
+            timesteps = progress.tqdm(timesteps, desc="Processing")
+
+        i = 0
+        for t in timesteps:
+
             # expand the latents if we are doing classifier free guidance
             latent_model_input = (
                 torch.cat([latents] * 2) if do_classifier_free_guidance else latents
@@ -318,6 +326,7 @@ def text_to_video_sd_pipeline_call(
                 progress_bar.update()
                 if callback is not None and i % callback_steps == 0:
                     callback(i, t, latents)
+            i += 1
 
     if output_type == "latent":
         return TextToVideoSDPipelineOutput(frames=latents)
