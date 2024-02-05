@@ -32,7 +32,7 @@ The codebase is tested under **NVIDIA GeForce RTX 3090** with the python library
 
 ## :fire: Usage
 
-##### Prepare
+#### [Prepare]
 
 First of all, download the pre-trained zeroscope model ([link](https://huggingface.co/cerspense/zeroscope_v2_576w)). You need to register huggingface and make access token ([link](https://huggingface.co/))
 ```bash
@@ -44,7 +44,7 @@ where MODEL_ROOT is your preference that stores the model. Then, clone this Repo
 git clone https://github.com/hohonu-vicml/Trailblazer && cd Trailbalzer
 ```
 
-##### Run it
+#### [Run it]
 
 Our executable script is located in the "bin" folder, and the core module is implemented in the "TrailBlazer" folder under the project root. Therefore, no additional dependencies need to be added to PYTHONPATH; you can simply run the command below :smirk: :
 ```bash
@@ -52,12 +52,12 @@ python bin/CmdTrailBlazer.py -mr ${MODEL_ROOT} --config config/XXXX.yaml  ## sin
 python bin/CmdTrailBlazer.py -mr ${MODEL_ROOT} --config config/  ## run all yamls in a folder
 ```
 
-:cupid:UPDATE:cupid: TrailBlazer has just released Gradio app for the alternative interface. Please checkout our documentation ([Gradio.md](doc/Gradio.md)) for more information. To run the app, simply run:
+:cupid:**UPDATE**:cupid:: TrailBlazer has just released Gradio app for the alternative interface. Please checkout our documentation ([Gradio.md](doc/Gradio.md)) for more information. To run the app, simply run:
 ```bash
 python bin/CmdGradio.py ${MODEL_ROOT} # no -mr here
 ```
 
-##### Config
+#### [Config]
 
 A list of config example files is stored in the `config` folder. Feel free to run each of them and the result will be written in the `/tmp` folder. For more information how to design the config file, and the visual result of each config. Please visit [here](config/README.md).
 
@@ -69,6 +69,7 @@ This project is still working in progress, and there are numerous directions in 
 
 We apologize this repository is currently not fully public. Currently, we only release the core methods of a single subject synthesis. We will progressively make the multiple subjects and Gradio demo within next two weeks. Stay tuned! (again!)
 
+## :fire: Fun
 
 <img src="./assets/figs/Speed-cat.0004.0000.gif" width="256" height="256"> Poor cat: Someone, Stop me!
 
