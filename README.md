@@ -1,5 +1,5 @@
 
-# ___***Trailblazer***___
+# ___***TrailBlazer***___
 
 [![Paper](https://img.shields.io/badge/cs.CV-Paper-b31b1b?logo=arxiv&logoColor=red)](https://arxiv.org/abs/2401.00896)
 [![Project Page](https://img.shields.io/badge/TrailBlazer-Website-green?logo=googlechrome&logoColor=green)](https://hohonu-vicml.github.io/Trailblazer.Page/)
@@ -10,7 +10,7 @@
 
 
 This repository contains the implementation of the following paper:
-> **Trajectory Control for Diffusion-Based Video Generation**<br>
+> **TrailBlazer: Trajectory Control for Diffusion-Based Video Generation**<br>
 > [Wan-Duo Kurt Ma](https://www.linkedin.com/in/kurt-ma/)<sup>1</sup>, [J.P. Lewis](http://www.scribblethink.org/)<sup>2</sup>, [ W. Bastiaan Kleijn](https://people.wgtn.ac.nz/bastiaan.kleijn)<sup>1</sup>,<br>
 Victoria University of Wellington<sup>1</sup>, NVIDIA Research<sup>2</sup>
 
