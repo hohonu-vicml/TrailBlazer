@@ -74,8 +74,11 @@ We apologize this repository is currently not fully public. Currently, we only r
 
 <img src="./assets/figs/Speed-cat.0004.0000.gif" width="256" height="256"> Poor cat: Someone, Stop me!
 
-<img src="./assets/figs/Omg-CatDog.0003.gif" width="256" height="256"> TrailBlazer can also make subject deformation!
+<img src="./assets/figs/Omg-CatDog.0003.gif" width="256" height="256"> Cat: let's turn into a dog so the authors won't ask me run.
 
+<img src="./assets/figs/Omg-cat2fish.gif" width="256" height="256"> Cat: I said, dog! NOT fish! 
+
+Please share your funny video if any. We will post here and credit your Github id!
 
 ## :fire: Citation
 
