@@ -29,7 +29,7 @@ class InjecterProcessor(CrossAttnProcessorBase):
         self.use_weaken = True
         self.name = name
 
-    def dd_core(self, attention_probs: torch.Tensor):
+    def dd_core(self, attention_probs: torch.Tensor, dim_x, dim_y):
         """ """
 
         frame_size = attention_probs.shape[0] // self.num_frames
@@ -37,7 +37,7 @@ class InjecterProcessor(CrossAttnProcessorBase):
         attention_probs_copied = attention_probs.detach().clone()
 
         token_inds = self.bundle.get("token_inds")
-        trailing_length = self.bundle.get("trailing_length")
+        trailing_length = self.bundle["trailblazer"]["trailing_length"]
         trailing_inds = list(
             range(self.len_prompt + 1, self.len_prompt + trailing_length + 1)
         )
@@ -48,6 +48,8 @@ class InjecterProcessor(CrossAttnProcessorBase):
                 attention_probs_copied,
                 token_inds=all_tokens_inds,
                 bbox_per_frame=self.bbox_per_frame,
+                dim_x = dim_x,
+                dim_y = dim_y
             )
 
             weaken_map = torch.ones_like(strengthen_map)
@@ -67,6 +69,8 @@ class InjecterProcessor(CrossAttnProcessorBase):
             strengthen_map = self.localized_temporal_weight_map(
                 attention_probs_copied,
                 bbox_per_frame=self.bbox_per_frame,
+                dim_x = dim_x,
+                dim_y = dim_y
             )
             weaken_map = torch.ones_like(strengthen_map)
             zero_indices = torch.where(strengthen_map == 0)

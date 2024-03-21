@@ -1,0 +1,30 @@
+keyframe:
+- bbox_ratios:
+  - 0.0
+  - 0.5
+  - 0.3
+  - 0.7
+  frame: 0
+  prompt: A tiger walking in the wildpark
+- bbox_ratios:
+  - 0.7
+  - 0.3
+  - 1.0
+  - 0.7
+  frame: 24
+  prompt: An elephant walking in the wildpark
+seed: 123451232579
+token_inds:
+- 1
+- 2
+width: 512
+height: 512
+num_inference_steps:
+trailblazer:
+  num_dd_spatial_steps: 5
+  num_dd_temporal_steps: 5
+  spatial_strengthen_scale: 0.1
+  spatial_weaken_scale: 0.001
+  temp_strengthen_scale: 0.1
+  temp_weaken_scale: 0.001
+  trailing_length: 13

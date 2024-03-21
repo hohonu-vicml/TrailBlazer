@@ -57,8 +57,8 @@ def initiailization(unet, bundle, bbox_per_frame):
                 processor = InjecterProcessor(
                     bundle=bundle,
                     bbox_per_frame=bbox_per_frame,
-                    strengthen_scale=bundle["temp_strengthen_scale"],
-                    weaken_scale=bundle["temp_weaken_scale"],
+                    strengthen_scale=bundle["trailblazer"]["temp_strengthen_scale"],
+                    weaken_scale=bundle["trailblazer"]["temp_weaken_scale"],
                     is_text2vidzero=False,
                     name=name,
                 )
@@ -66,8 +66,8 @@ def initiailization(unet, bundle, bbox_per_frame):
                 processor = InjecterProcessor(
                     bundle=bundle,
                     bbox_per_frame=bbox_per_frame,
-                    strengthen_scale=bundle["spatial_strengthen_scale"],
-                    weaken_scale=bundle["spatial_weaken_scale"],
+                    strengthen_scale=bundle["trailblazer"]["spatial_strengthen_scale"],
+                    weaken_scale=bundle["trailblazer"]["spatial_weaken_scale"],
                     is_text2vidzero=False,
                     name=name,
                 )

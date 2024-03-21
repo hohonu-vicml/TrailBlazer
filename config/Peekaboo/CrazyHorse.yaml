@@ -1,0 +1,59 @@
+keyframe:
+- bbox_ratios:
+  - 0.0
+  - 0.0
+  - 0.25
+  - 0.3
+  frame: 0
+  prompt: A horse fast galloping on a street
+- bbox_ratios:
+  - 0.0
+  - 0.6
+  - 0.25
+  - 1.0
+  frame: 5
+  prompt: A horse fast galloping on a street
+- bbox_ratios:
+  - 0.4
+  - 0.0
+  - 0.65
+  - 0.3
+  frame: 10
+  prompt: A horse fast galloping on a street
+- bbox_ratios:
+  - 0.4
+  - 0.6
+  - 0.65
+  - 1.0
+  frame: 15
+  prompt: A horse fast galloping on a street
+- bbox_ratios:
+  - 0.75
+  - 0.0
+  - 1.0
+  - 0.3
+  frame: 20
+  prompt: A horse fast galloping on a street
+- bbox_ratios:
+  - 0.75
+  - 0.6
+  - 1.0
+  - 1.0
+  frame: 24
+  prompt: A horse fast galloping on a street
+token_inds:
+- 2
+width: 576
+height: 320
+num_inference_steps:
+seed: 2
+trailblazer:
+  num_dd_spatial_steps: 5
+  num_dd_temporal_steps: 5
+  spatial_strengthen_scale: 0.2
+  spatial_weaken_scale: 0.05
+  temp_strengthen_scale: 0.2
+  temp_weaken_scale: 0.05
+  trailing_length: 10
+peekaboo:
+  frozen_steps: 2

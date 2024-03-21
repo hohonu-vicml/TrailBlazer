@@ -1,0 +1,20 @@
+prompt: A dolphin just breaking the ocean surface
+seed: 4
+token_inds:
+- 2
+width: 576
+height: 320
+num_inference_steps:
+trailblazer:
+  num_dd_spatial_steps: 5
+  num_dd_temporal_steps: 5
+  spatial_strengthen_scale: 0.1
+  spatial_weaken_scale: 0.001
+  temp_strengthen_scale: 0.1
+  temp_weaken_scale: 0.001
+  trailing_length: 13
+text2vidzero:
+  motion_field_strength_x: -8
+  motion_field_strength_y: 0
+peekaboo:
+  frozen_steps: 2

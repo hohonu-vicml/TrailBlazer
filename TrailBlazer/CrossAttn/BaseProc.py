@@ -7,6 +7,7 @@ from diffusers.models.attention_processor import Attention as CrossAttention
 from einops import rearrange
 from ..Misc import Logger as log
 from ..Misc.BBox import BoundingBox
+from ..Misc import Const
 
 KERNEL_DIVISION = 3.
 INJECTION_SCALE = 1.0
@@ -136,40 +137,53 @@ class CrossAttnProcessorBase:
 
         n = attention_probs.shape[0] // 2
         if attention_probs.shape[-1] == CrossAttnProcessorBase.MAX_LEN_CLIP_TOKENS:
-            dim = int(np.sqrt(attention_probs.shape[1]))
+            gcd = np.gcd(Const.DEFAULT_HEIGHT, Const.DEFAULT_WIDTH)
+            height_multiplier = Const.DEFAULT_HEIGHT / gcd
+            width_multiplier = Const.DEFAULT_WIDTH / gcd
+            factor = attention_probs.shape[1] // (height_multiplier * width_multiplier)
+            factor = int(np.sqrt(factor))
+            dim_y = int(factor * height_multiplier)
+            dim_x = int(factor * width_multiplier)
             if self.use_dd:
                 # self.use_dd = False
                 attention_probs_4d = attention_probs.view(
-                    attention_probs.shape[0], dim, dim, attention_probs.shape[-1]
+                    attention_probs.shape[0], dim_y, dim_x, attention_probs.shape[-1]
                 )[n:]
-                attention_probs_4d = self.dd_core(attention_probs_4d)
+                attention_probs_4d = self.dd_core(attention_probs_4d, dim_x, dim_y)
                 attention_probs[n:] = attention_probs_4d.reshape(
-                    attention_probs_4d.shape[0], dim * dim, attention_probs_4d.shape[-1]
+                    attention_probs_4d.shape[0], dim_y * dim_x, attention_probs_4d.shape[-1]
                 )
 
             self._cross_attention_map = attention_probs.view(
-                attention_probs.shape[0], dim, dim, attention_probs.shape[-1]
+                attention_probs.shape[0], dim_y, dim_x, attention_probs.shape[-1]
             )[n:]
 
         elif (
             attention_probs.shape[-1] == self.num_frames
             and (attention_probs.shape[0] == 65536)
         ):
-            dim = int(np.sqrt(attention_probs.shape[0] // (2 * attn.heads)))
+            #dim = int(np.sqrt(attention_probs.shape[0] // (2 * attn.heads)))
+            gcd = np.gcd(Const.DEFAULT_HEIGHT, Const.DEFAULT_WIDTH)
+            height_multiplier = Const.DEFAULT_HEIGHT / gcd
+            width_multiplier = Const.DEFAULT_WIDTH / gcd
+            factor = (attention_probs.shape[0] // (2 * attn.heads)) // (height_multiplier * width_multiplier)
+            factor = int(np.sqrt(factor))
+            dim_y = int(factor * height_multiplier)
+            dim_x = int(factor * width_multiplier)
             if self.use_dd_temporal:
                 # self.use_dd_temporal = False
                 def temporal_doit(origin_attn):
                     temporal_attn = reshape_fortran(
                         origin_attn,
-                        (attn.heads, dim, dim, self.num_frames, self.num_frames),
+                        (attn.heads, dim_y, dim_x, self.num_frames, self.num_frames),
                     )
                     temporal_attn = torch.transpose(temporal_attn, 1, 2)
-                    temporal_attn = self.dd_core(temporal_attn)
+                    temporal_attn = self.dd_core(temporal_attn, dim_x, dim_y)
                     # torch.Size([8, 64, 64, 24, 24])
                     temporal_attn = torch.transpose(temporal_attn, 1, 2)
                     temporal_attn = reshape_fortran(
                         temporal_attn,
-                        (attn.heads * dim * dim, self.num_frames, self.num_frames),
+                        (attn.heads * dim_y * dim_x, self.num_frames, self.num_frames),
                     )
                     return temporal_attn
 
@@ -181,7 +195,7 @@ class CrossAttnProcessorBase:
 
             self._cross_attention_map = reshape_fortran(
                 attention_probs[:n],
-                (attn.heads, dim, dim, self.num_frames, self.num_frames),
+                (attn.heads, dim_y, dim_x, self.num_frames, self.num_frames),
             )
             self._cross_attention_map = self._cross_attention_map.mean(dim=0)
             self._cross_attention_map = torch.transpose(self._cross_attention_map, 0, 1)
@@ -201,7 +215,7 @@ class CrossAttnProcessorBase:
         pass
 
     @staticmethod
-    def localized_weight_map(attention_probs_4d, token_inds, bbox_per_frame, scale=1):
+    def localized_weight_map(attention_probs_4d, token_inds, bbox_per_frame, dim_x, dim_y, scale=1):
         """Using guassian 2d distribution to generate weight map and return the
         array with the same size of the attention argument.
         """
@@ -209,10 +223,9 @@ class CrossAttnProcessorBase:
         max_val = attention_probs_4d.max()
         weight_map = torch.zeros_like(attention_probs_4d).half()
         frame_size = attention_probs_4d.shape[0] // len(bbox_per_frame)
-
         for i in range(len(bbox_per_frame)):
             bbox_ratios = bbox_per_frame[i]
-            bbox = BoundingBox(dim, bbox_ratios)
+            bbox = BoundingBox(dim_x, dim_y, bbox_ratios)
             # Generating the gaussian distribution map patch
             x = torch.linspace(0, bbox.height, bbox.height)
             y = torch.linspace(0, bbox.width, bbox.width)
@@ -243,7 +256,7 @@ class CrossAttnProcessorBase:
         return weight_map
 
     @staticmethod
-    def localized_temporal_weight_map(attention_probs_5d, bbox_per_frame, scale=1):
+    def localized_temporal_weight_map(attention_probs_5d, bbox_per_frame, dim_x, dim_y, scale=1):
         """Using guassian 2d distribution to generate weight map and return the
         array with the same size of the attention argument.
         """
@@ -253,7 +266,7 @@ class CrossAttnProcessorBase:
         weight_map = torch.zeros_like(attention_probs_5d).half()
 
         def get_patch(bbox_at_frame, i, j, bbox_per_frame):
-            bbox = BoundingBox(dim, bbox_at_frame)
+            bbox = BoundingBox(dim_x, dim_y, bbox_at_frame)
             # Generating the gaussian distribution map patch
             x = torch.linspace(0, bbox.height, bbox.height)
             y = torch.linspace(0, bbox.width, bbox.width)

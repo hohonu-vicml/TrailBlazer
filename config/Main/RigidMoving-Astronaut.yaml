@@ -1,0 +1,34 @@
+keyframe:
+- bbox_ratios:
+  - 0.0
+  - 0.35
+  - 0.3
+  - 0.65
+  frame: 0
+  prompt: An astronaut walking on the moon
+- bbox_ratios:
+  - 0.7
+  - 0.35
+  - 1.0
+  - 0.65
+  frame: 24
+  prompt: An astronaut walking on the moon
+seed: 1234
+token_inds:
+- 2
+width: 576
+height: 320
+num_inference_steps:
+trailblazer:
+  num_dd_spatial_steps: 7
+  num_dd_temporal_steps: 7
+  spatial_strengthen_scale: 0.125
+  spatial_weaken_scale: 0.001
+  temp_strengthen_scale: 0.125
+  temp_weaken_scale: 0.001
+  trailing_length: 10
+text2vidzero:
+  motion_field_strength_x: -8
+  motion_field_strength_y: 0
+peekaboo:
+  frozen_steps: 2

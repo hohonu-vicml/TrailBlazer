@@ -1,0 +1,7 @@
+multisubs:
+  seed: 12345611
+  num_integration_steps: 20
+  prompt: a white cat and a yellow dog running in the botanic garden
+  subjects:
+    - /tmp/TrailBlazer/MultiSubject-Dog.0000.pt
+    - /tmp/TrailBlazer/MultiSubject-Cat.0000.pt

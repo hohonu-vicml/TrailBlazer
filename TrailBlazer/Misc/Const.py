@@ -4,3 +4,6 @@ NEGATIVE_PROMPT = "bad anatomy, bad proportions, blurry, cloned face, cropped, d
 
 
 POSITIVE_PROMPT = "; masterpiece, best quality, intricate, detailed, sharp, focused, intricate details, hyperdetailed, 8k, RAW photo,realistic style, national geography, fantasy, hyper-realistic, rich colors, realistic texture"
+
+DEFAULT_HEIGHT = 320
+DEFAULT_WIDTH = 576

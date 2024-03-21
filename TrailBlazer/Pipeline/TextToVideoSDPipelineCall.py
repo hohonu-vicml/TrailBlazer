@@ -155,8 +155,8 @@ def text_to_video_sd_pipeline_call(
     prompt = bundle["prompt_base"]
     #prompt += Const.POSITIVE_PROMPT
     num_frames = bundle["keyframe"][-1]["frame"] + 1
-    num_dd_spatial_steps = bundle["num_dd_spatial_steps"]
-    num_dd_temporal_steps = bundle["num_dd_temporal_steps"]
+    num_dd_spatial_steps = bundle["trailblazer"]["num_dd_spatial_steps"]
+    num_dd_temporal_steps = bundle["trailblazer"]["num_dd_temporal_steps"]
 
     bbox_per_frame = keyframed_bbox(bundle)
     initiailization(unet=self.unet, bundle=bundle, bbox_per_frame=bbox_per_frame)
@@ -304,12 +304,6 @@ def text_to_video_sd_pipeline_call(
             latents = self.scheduler.step(
                 noise_pred, t, latents, **extra_step_kwargs
             ).prev_sample
-
-            # if i==num_dd_steps:
-            #     print("PF!", latents.shape)
-            #     n = latents.shape[0]
-            #     for f in range(n):
-            #         latents[f] = torch.roll(latents[f], -f, dims=-1)
 
             # reshape latents back
             latents = (

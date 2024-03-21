@@ -1,0 +1,34 @@
+keyframe:
+- bbox_ratios:
+  - 0.0
+  - 0.3
+  - 0.3
+  - 0.7
+  frame: 0
+  prompt: A macro video of a bee pollinating a flower
+- bbox_ratios:
+  - 0.7
+  - 0.3
+  - 1.0
+  - 0.7
+  frame: 24
+  prompt: A macro video of a bee pollinating a flower
+seed: 123451232532
+token_inds:
+- 6
+width: 576
+height: 320
+num_inference_steps:
+trailblazer:
+  num_dd_spatial_steps: 5
+  num_dd_temporal_steps: 5
+  spatial_strengthen_scale: 0.15
+  spatial_weaken_scale: 0.001
+  temp_strengthen_scale: 0.15
+  temp_weaken_scale: 0.001
+  trailing_length: 13
+text2vidzero:
+  motion_field_strength_x: -8
+  motion_field_strength_y: 0
+peekaboo:
+  frozen_steps: 3

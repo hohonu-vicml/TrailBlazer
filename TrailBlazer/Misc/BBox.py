@@ -6,7 +6,7 @@ import torch
 class BoundingBox:
     """A rectangular bounding box determines the directed regions."""
 
-    def __init__(self, resolution, box_ratios, margin=0.0):
+    def __init__(self, dim_x, dim_y, box_ratios, margin=0.01):
         """
         Args:
             resolution(int): the resolution of the 2d spatial input
@@ -19,10 +19,11 @@ class BoundingBox:
         assert (
             box_ratios[0] < box_ratios[2]
         ), "the boundary left ratio should be less than right"
-        self.left = int((box_ratios[0] - margin) * resolution)
-        self.right = int((box_ratios[2] + margin) * resolution)
-        self.top = int((box_ratios[1] - margin) * resolution)
-        self.bottom = int((box_ratios[3] + margin) * resolution)
+        self.left = int((box_ratios[0] + margin) * dim_x)
+        self.right = int((box_ratios[2] - margin) * dim_x)
+        self.top = int((box_ratios[1] + margin) * dim_y)
+        self.bottom = int((box_ratios[3] - margin) * dim_y)
+
         self.height = self.bottom - self.top
         self.width = self.right - self.left
         if self.height == 0:

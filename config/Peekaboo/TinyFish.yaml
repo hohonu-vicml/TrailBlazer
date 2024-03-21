@@ -1,0 +1,34 @@
+keyframe:
+- bbox_ratios:
+  - 0.475
+  - 0.45
+  - 0.525
+  - 0.65
+  frame: 0
+  prompt: A clownfish swimming in a coral reef
+- bbox_ratios:
+  - 0.475
+  - 0.45
+  - 0.525
+  - 0.65
+  frame: 24
+  prompt: A clownfish swimming in a coral reef
+seed: 123451232531
+token_inds:
+- 2
+width: 576
+height: 320
+num_inference_steps:
+trailblazer:
+  num_dd_spatial_steps: 5
+  num_dd_temporal_steps: 5
+  spatial_strengthen_scale: 0.3
+  spatial_weaken_scale: 0.001
+  temp_strengthen_scale: 0.3
+  temp_weaken_scale: 0.001
+  trailing_length: 35
+text2vidzero:
+  motion_field_strength_x: -8
+  motion_field_strength_y: 0
+peekaboo:
+  frozen_steps: 2

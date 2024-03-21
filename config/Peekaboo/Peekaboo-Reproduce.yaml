@@ -1,0 +1,32 @@
+# See the line92 - line95 in genreate.py for how Peekaboo generating bbox
+keyframe:
+- bbox_ratios:
+  - 0.138
+  - 0.25
+  - 0.416
+  - 0.625
+  frame: 0
+  prompt: A panda eating bamboo in a lush bamboo forest
+- bbox_ratios:
+  - 0.138
+  - 0.25
+  - 0.416
+  - 0.625
+  frame: 24
+  prompt: A panda eating bamboo in a lush bamboo forest
+token_inds:
+- 2
+width: 576
+height: 320
+num_inference_steps:
+seed: 2
+trailblazer:
+  num_dd_spatial_steps: 5
+  num_dd_temporal_steps: 5
+  spatial_strengthen_scale: 0.175
+  spatial_weaken_scale: 0.05
+  temp_strengthen_scale: 0.175
+  temp_weaken_scale: 0.05
+  trailing_length: 15
+peekaboo:
+  frozen_steps: 2

@@ -1,0 +1,81 @@
+# bbox_ratios: left, top, bottom, right
+keyframe:
+- bbox_ratios:
+  - 0.0
+  - 0.35
+  - 0.3
+  - 0.65
+  frame: 0
+  prompt: A dog is running on the grass
+- bbox_ratios:
+  - 0.7
+  - 0.35
+  - 1.0
+  - 0.65
+  frame: 3
+  prompt: A dog is running on the grass
+- bbox_ratios:
+  - 0.0
+  - 0.35
+  - 0.3
+  - 0.65
+  frame: 6
+  prompt: A dog is running on the grass
+- bbox_ratios:
+  - 0.7
+  - 0.35
+  - 1.0
+  - 0.65
+  frame: 9
+  prompt: A dog is running on the grass
+- bbox_ratios:
+  - 0.0
+  - 0.35
+  - 0.3
+  - 0.65
+  frame: 12
+  prompt: A dog is running on the grass
+- bbox_ratios:
+  - 0.7
+  - 0.35
+  - 1.0
+  - 0.65
+  frame: 15
+  prompt: A dog is running on the grass
+- bbox_ratios:
+  - 0.0
+  - 0.35
+  - 0.3
+  - 0.65
+  frame: 18
+  prompt: A dog is running on the grass
+- bbox_ratios:
+  - 0.7
+  - 0.35
+  - 1.0
+  - 0.65
+  frame: 21
+  prompt: A dog is running on the grass
+- bbox_ratios:
+  - 0.0
+  - 0.35
+  - 0.3
+  - 0.65
+  frame: 24
+  prompt: A dog is running on the grass
+seed: 123451232532
+token_inds:
+- 2
+width: 576
+height: 320
+num_inference_steps:
+trailblazer:
+  num_dd_spatial_steps: 5
+  num_dd_temporal_steps: 5
+  spatial_strengthen_scale: 0.2
+  spatial_weaken_scale: 0.05
+  temp_strengthen_scale: 0.2
+  temp_weaken_scale: 0.05
+  trailing_length: 15
+peekaboo:
+  frozen_steps: 2

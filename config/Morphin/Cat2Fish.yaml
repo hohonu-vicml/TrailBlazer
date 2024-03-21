@@ -1,0 +1,30 @@
+keyframe:
+- bbox_ratios:
+  - 0.7
+  - 0.4
+  - 1.0
+  - 0.65
+  frame: 0
+  prompt: A white cat walking on the grass
+- bbox_ratios:
+  - 0.0
+  - 0.4
+  - 0.3
+  - 0.65
+  frame: 24
+  prompt: A golden fish walking on the grass
+seed: 123451232531
+token_inds:
+- 1
+- 2
+- 3
+width: 512
+height: 512
+trailblazer:
+  num_dd_spatial_steps: 5
+  num_dd_temporal_steps: 5
+  spatial_strengthen_scale: 0.1
+  spatial_weaken_scale: 0.001
+  temp_strengthen_scale: 0.1
+  temp_weaken_scale: 0.001
+  trailing_length: 16

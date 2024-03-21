@@ -1,0 +1,38 @@
+keyframe:
+- bbox_ratios:
+  - 0.0
+  - 0.0
+  - 0.2
+  - 0.2
+  frame: 0
+  prompt: a photorealistic whale jumping out of water while smoking a cigar
+- bbox_ratios:
+  - 0.3
+  - 0.2
+  - 0.7
+  - 0.8
+  frame: 12
+  prompt: a photorealistic whale jumping out of water while smoking a cigar
+- bbox_ratios:
+  - 0.8
+  - 0.8
+  - 1.0
+  - 1.0
+  frame: 24
+  prompt: a photorealistic whale jumping out of water while smoking a cigar
+token_inds:
+- 3
+width: 576
+height: 320
+num_inference_steps:
+seed: 2
+trailblazer:
+  num_dd_spatial_steps: 5
+  num_dd_temporal_steps: 5
+  spatial_strengthen_scale: 0.1
+  spatial_weaken_scale: 0.01
+  temp_strengthen_scale: 0.1
+  temp_weaken_scale: 0.01
+  trailing_length: 20
+peekaboo:
+  frozen_steps: 2
