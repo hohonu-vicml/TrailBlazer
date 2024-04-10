@@ -44,6 +44,8 @@ to avoid the compatibility of sm_86 issue.
 
 ## :fire: Timeline
 
+-   [2024/04/08]: Our new v2 preprint is now appeared on ArXiv (See [link](https://arxiv.org/abs/2401.00896))
+
 -   [2024/03/23]: A new ArXiv update will be made.
 
 -   [2024/03/22]: We release the multiple object synthesis (See
