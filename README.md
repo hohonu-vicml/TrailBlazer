@@ -19,19 +19,9 @@ University of Wellington<sup>1</sup>, NVIDIA Research<sup>2</sup>
 ## :fire: Overview
 ![teaser](./assets/teaser.gif)
 
-**TrailBlazer** focuses on enhancing controllability in video synthesis by
-employing straightforward bounding boxes to guide the subject in various ways,
-all without the need for neural network training, finetuning, optimization at
-inference time, or the use of pre-existing videos. Our algorithm is constructed
-upon a pre-trained (T2V) model, and easy to implement. The subject is directed
-by a bounding box through the proposed spatial and temporal attention map
-editing. Moreover, we introduce the concept of keyframing, allowing the subject
-trajectory and overall appearance to be guided by both a moving bounding box and
-corresponding prompts, without the need to provide a detailed mask. The method
-is efficient, with negligible additional computation relative to the underlying
-pre-trained model. Despite the simplicity of the bounding box guidance, the
-resulting motion is surprisingly natural, with emergent effects including
-perspective and movement toward the virtual camera as the box size increases.
+Large text-to-video (T2V) models such as Sora have the potential to revolutionize visual effects and the creation of some types of movies. Current T2V models require tedious trial-and-error experimentation to achieve desired results, however. This motivates the search for methods to directly control desired attributes. In this work, we take a step toward this goal, introducing a method for high-level, temporally-coherent control over the basic trajectories and appearance of objects. Our algorithm, **TrailBlazer**, allows the general positions and (optionally) appearance of objects to controlled simply by keyframing approximate bounding boxes and (optionally) their corresponding prompts.
+
+Importantly, our method does not require a pre-existing control video signal that already contains an accurate outline of the desired motion, yet the synthesized motion is surprisingly natural with emergent effects including perspective and movement toward the virtual camera as the box size increases. The method is efficient, making use of a pre-trained T2V model and requiring no training or fine-tuning, with negligible additional computation. Specifically, the bounding box controls are used as soft masks to guide manipulation of the self-attention and cross-attention modules in the video model. While our visual results are limited by those of the underlying model, the algorithm may generalize to future models that use standard self- and cross-attention components.
 
 ## :fire: Requirements
 
